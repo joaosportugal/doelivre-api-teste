@@ -8,6 +8,12 @@
 - Na branch <b>http-module</b> o foco é trabalhar escrever um CRUD utilizando apenas o módulo nativo do Javascript.
 - Na branch <b>express</b> é um registro do uso do express sem utilizar o banco de dados para construir APIs estáticas.
 
+## Design inicial do Banco de Dados
+> feito com Entity Relationship Diagram
+
+<p align="left">
+  <img alt="Entity relationship Diagram Doelivre" src="./src/assets/images/erd.png" />
+</p>
 
 ## Requisitos para rodar o projeto
 
