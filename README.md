@@ -1,6 +1,6 @@
 # Doelivre-api-teste
 
-> Projeto iniciado como prática de construção de API Restful utilizando os módulos nativos do Javascript, express e acessando banco de dados
+> O projeto se trata de um rascunho para construir uma API que irá gerenciar um sistema de e-commerce "colaborativo" onde os usuários podem doar produtos, e esse produtos, por sua vez, ficam disponíveis em um catálogo para que outros usuários possam comprar. O objetivo é que todo o dinheiro arrecado será revertido para ações beneficentes.
 
 # About the Project/Sobre o projeto
 
@@ -12,7 +12,7 @@
 > feito com Entity Relationship Diagram
 
 <p align="left">
-  <img alt="Entity relationship Diagram Doelivre" src="./src/assets/images/erd.png" />
+  <img alt="Entity Relationship Diagram Doelivre" src="./src/assets/images/erd.png" />
 </p>
 
 ## Requisitos para rodar o projeto
@@ -29,8 +29,16 @@
 
 ## Estrutura do projeto
 
-- `./server.js`: inicia o servidor
-- `./src/app.js`: disponibiliza os arquivos fonte da api
+> Esse projeto segue o padrão de arquitetura MVC (Model View Controller) e o modelo REST
+
+- `./server.js`: Importa o módulo app e usa-o para iniciar o servidor para escutar numa porta especificada
+- `./src`: Reune todo o arquivo fonte do projeto
+    - `./app.js`: Conecta com o banco de dados e passa para a instância do express para se utilizar as rotas
+    - `./config`: Configura a conexão com o banco de dados
+    - `./controllers`: O controlador é um intermediário entre as requisições que vem do navegador, uma outra API, ou até mesmo o Postman. <br/>Essa pasta reúne os controladores para todas as rotas do projeto
+    - `./routes`: Reúne arquivos de definição de rotas (para definir as rotas utilizamos o express)
+    - `./routes/index.js`: O arquivo index.js concentra todas as rotas que serão utilizadas na aplicação
+    - `./models`: Cria as Collections e os Schemas para modelar o banco de dados utilizando o Mongoose
 
 ## Configuração
 - Clone este repositório em sua máquina local usando o comando git clone https://github.com/joaosportugal/doelivre-api-teste
