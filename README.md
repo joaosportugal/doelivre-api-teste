@@ -12,8 +12,35 @@
 > feito com Entity Relationship Diagram
 
 <p align="left">
-  <img alt="Entity Relationship Diagram Doelivre" src="./src/assets/images/erd.png" />
+  <img alt="Entity Relationship Diagram Doelivre" src="./src/assets/images/erd-doelivre-v5.png" />
 </p>
+
+<p align="left">
+  <img alt="Tabelas de Relacionamento Doelivre" src="./src/assets/images/tables.png" />
+</p>
+
+## Como testar?
+
+- Utilize o POSTMAN
+
+- Teste o CRUD para as rotas:
+
+- .get("/nucleos", NucleoController.listNucleos)
+- .get("/nucleos/:id", NucleoController.getNucleoById)
+- .post("/nucleos", NucleoController.registerNucleo)
+- .put("/nucleos/:id", NucleoController.updateNucleo) 
+- .delete("/nucleos/:id", NucleoController.deleteNucleo)
+- .get("/produtos", ProductController.listProducts)
+- .get("/produtos/busca", ProductController.listByCategory)
+- .get("/produtos/:id", ProductController.listProductById)
+- .post("/produtos", ProductController.registerProduct)
+- .put("/produtos/:id", ProductController.updateProduct) 
+- .delete("/produtos/:id", ProductController.deleteProduct)
+- .get("/usuarios", UserController.listUsers)
+- .get("/usuarios/:id", UserController.listUserById)
+- .post("/usuarios", UserController.registerUser)
+- .put("/usuarios/:id", UserController.updateUser) 
+- .delete("/usuarios/:id", UserController.deleteUser)
 
 ## Requisitos para rodar o projeto
 
