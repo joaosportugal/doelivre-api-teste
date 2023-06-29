@@ -1,5 +1,7 @@
 import express from 'express'
 import productRoute from './productRoute.js'
+import userRoute from './userRoute.js'
+import nucleoRoute from './nucleoRoute.js'
 
 const routes = (app) => {
     app.route('/').get((req, res) => {
@@ -8,7 +10,9 @@ const routes = (app) => {
     
     app.use(
         express.json(),
-        productRoute
+        productRoute,
+        userRoute,
+        nucleoRoute
     )
 }
 

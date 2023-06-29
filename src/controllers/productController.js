@@ -3,7 +3,11 @@ import ProductModel from "../models/Product.js"
 class ProductController {
     static listProducts = async (req, res) => {
         try {
-            const products = await ProductModel.find()
+            const products = await ProductModel
+            .find()
+            .populate('user_id')
+            .populate('nucleo_id')
+            .exec()
             res.status(200).send(products)
         } catch (err) {
             res.status(500).send({message: `Erro ao encontrar produtos. ${err}`})
@@ -35,6 +39,8 @@ class ProductController {
         const { id } = req.params
         try {
             const product = await ProductModel.findById(id)
+            .populate('donor')
+            .exec()
             res.status(200).send(product)
         } catch (err) {
             res.status(400).send(`Erro ao encontrar produto: ${err}`)
@@ -49,6 +55,17 @@ class ProductController {
         } catch (err) {
             res.status(400).send(`Erro ao encontrar produto: ${err}`)
         }
+    }
+
+    static listByCategory = async (req, res) => {
+        const { category } = req.query
+        try {
+            const products = await ProductModel.find({'category': category})
+            res.status(200).send(products)
+        } catch (err) {
+            res.status(400).send(`Erro ao encontrar produto: ${err}`)
+        }
+
     }
 }
 
